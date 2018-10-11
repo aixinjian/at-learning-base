@@ -8,7 +8,6 @@ import java.util.List;
 
 
 @Data
-@NoArgsConstructor
 public class CentreCutPageResponse<T> extends CentreListResponse<T> {
 
     private static final long serialVersionUID = 5888709607809204814L;
