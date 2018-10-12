@@ -65,47 +65,47 @@ public class CopyUtil {
         return new PageResponseResult<>(sourcePageResponseResult.getTotalCount(), targetList);
     }
 
-    /**
-     * map转换为bean
-     *
-     * @param map
-     * @param targetClass
-     * @param <T>
-     * @return
-     */
-    public static <T> T mapTransferBean(Map map, Class<T> targetClass){
-        if (map == null){
-            return null;
-        }
-        try {
-            T t = targetClass.newInstance();
-            org.apache.commons.beanutils.BeanUtils.populate(t, map);
-            return t;
-        } catch (InstantiationException e) {
-            throw new BaseRuntimeException("map转换为bean：" + e.getMessage(), e);
-        } catch (IllegalAccessException e) {
-            throw new BaseRuntimeException("map转换为bean：" + e.getMessage(), e);
-        } catch (InvocationTargetException e) {
-            throw new BaseRuntimeException("map转换为bean：" + e.getMessage(), e);
-        }
-    }
-
-    /**
-     * bean转换为map
-     * @param bean
-     * @return
-     */
-    public static Map<String, String> beanTransferMap(Object bean){
-        try {
-            Map<String, String> map = org.apache.commons.beanutils.BeanUtils.describe(bean);
-            return map;
-        } catch (IllegalAccessException e) {
-            throw new BaseRuntimeException("bean转换为map：" + e.getMessage(), e);
-        } catch (InvocationTargetException e) {
-            throw new BaseRuntimeException("bean转换为map：" + e.getMessage(), e);
-        } catch (Exception e) {
-            throw new BaseRuntimeException("bean转换为map：" + e.getMessage(), e);
-        }
-    }
+//    /**
+//     * map转换为bean
+//     *
+//     * @param map
+//     * @param targetClass
+//     * @param <T>
+//     * @return
+//     */
+//    public static <T> T mapTransferBean(Map map, Class<T> targetClass){
+//        if (map == null){
+//            return null;
+//        }
+//        try {
+//            T t = targetClass.newInstance();
+//            org.apache.commons.beanutils.BeanUtils.populate(t, map);
+//            return t;
+//        } catch (InstantiationException e) {
+//            throw new BaseRuntimeException("map转换为bean：" + e.getMessage(), e);
+//        } catch (IllegalAccessException e) {
+//            throw new BaseRuntimeException("map转换为bean：" + e.getMessage(), e);
+//        } catch (InvocationTargetException e) {
+//            throw new BaseRuntimeException("map转换为bean：" + e.getMessage(), e);
+//        }
+//    }
+//
+//    /**
+//     * bean转换为map
+//     * @param bean
+//     * @return
+//     */
+//    public static Map<String, String> beanTransferMap(Object bean){
+//        try {
+//            Map<String, String> map = org.apache.commons.beanutils.BeanUtils.describe(bean);
+//            return map;
+//        } catch (IllegalAccessException e) {
+//            throw new BaseRuntimeException("bean转换为map：" + e.getMessage(), e);
+//        } catch (InvocationTargetException e) {
+//            throw new BaseRuntimeException("bean转换为map：" + e.getMessage(), e);
+//        } catch (Exception e) {
+//            throw new BaseRuntimeException("bean转换为map：" + e.getMessage(), e);
+//        }
+//    }
 
 }
